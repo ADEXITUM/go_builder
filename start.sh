@@ -11,9 +11,9 @@ docker build \
   --build-arg GO_VERSION=${GO_VERSION} \
   --build-arg PROJECT_NAME=${PROJECT_NAME} \
   --build-arg FOLDER_NAME=${FOLDER_NAME} \
-  -t my_golang_builder .
+  -t go_builder .
 
 # Run the Docker container
 docker run --rm \
-  -v $(pwd)/binary:/root \
-  my_golang_builder
+  -v $(pwd):/root \
+  go_builder
